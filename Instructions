@@ -1,0 +1,9 @@
+Instructions for downloading
+npm create vite@latest
+choose react typescriptnnpm
+cd my-project
+
+npm install
+npm run dev
+
+ctrl c or cmd c to clear terminal
