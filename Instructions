@@ -7,3 +7,8 @@ npm install
 npm run dev
 
 ctrl c or cmd c to clear terminal
+
+Install the ES7+ React/Redux/GraphQL/React-Native snippets extension in VS Code.
+
+in make containers and components folder
+In Navigation.tsx do rafce

@@ -1,15 +1,23 @@
-import { useState } from 'react'
+
 import './App.css'
+import Aside from './container/Aside/Aside'
+import Dashboard from './container/Dashboard/Dashboard'
+import Navigation from './container/Navigation/Navigation'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
-      <div> 
-      hello
-      </div>
-   
+      <section> 
+
+        <Navigation />
+        <div className="main">
+          <Aside />
+          <Dashboard />
+        </div>
+
+
+      </section>
     </>
   )
 }
