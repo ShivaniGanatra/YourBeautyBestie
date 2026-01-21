@@ -11,11 +11,11 @@ function App() {
       <section> 
 
         <Navigation />
+
         <div className="main">
           <Aside />
           <Dashboard />
         </div>
-
 
       </section>
     </>
