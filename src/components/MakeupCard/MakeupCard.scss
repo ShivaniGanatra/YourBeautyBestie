@@ -1,0 +1,32 @@
+.makeup-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: beige;
+    height: 400px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    _title {
+        font-size: 1.5em;
+        margin-bottom: 8px;
+        color: #333;   
+    }
+    _description {
+        font-size: 1em;
+        color: #666;
+    }
+    _price {
+        font-size: 1.2em;
+        color: #000;
+        font-weight: bold;
+        margin-top: 12px;
+    }
+    _image {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 12px;
+    }
+}
