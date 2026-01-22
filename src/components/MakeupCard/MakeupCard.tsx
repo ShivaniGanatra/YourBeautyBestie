@@ -1,22 +1,26 @@
 import "./MakeupCard.scss"
 
-const MakeupCard = () => {
+type MakeupCardProps = {
+  makeupData?: object[];
+  name: string;
+  key: number;
+  description: string;
+  price: string;
+  image_link: string;
+  currency: string;
+};
+
+const MakeupCard = ({ name, description, price, image_link, currency }: MakeupCardProps) => {
 
   return (
     <div className="makeup-card">
-      <img src="" alt="api featured image" />
-      <h1 className="makeup-card_title">Colourpop - No filter foundation </h1>
-      <p className="makeup-card_price">$ - 12.0</p>
+      <img className="makeup-card_image" src={image_link} alt="api featured image" />
+      <h1 className="makeup-card_title">{name}</h1>
+      <p className="makeup-card_price">{currency}{price}</p>
       <section className="makeup-card_colours">
         Colours
       </section>
-      <section className="makeup-card_description">Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit, sed 
-        do eiusmod tempor incididunt ut 
-        labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis 
-        nostrud exercitation ullamco 
-        laboris nisi ut aliquip ex ea commodo consequat. </section>
+      <section className="makeup-card_description">{description}</section>
     </div>
   )
 }

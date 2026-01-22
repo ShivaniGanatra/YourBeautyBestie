@@ -1,0 +1,11 @@
+.Dashboard {
+  margin: 0;
+  background-color: white;
+  display: flex;
+  width: 75vw;
+  height: auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+}/*# sourceMappingURL=Dashboard.css.map */
