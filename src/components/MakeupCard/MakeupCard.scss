@@ -5,7 +5,7 @@
     width: 300px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: rgb(255, 255, 255);
-    height: 500px;
+    height: 600px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
     display: flex;
@@ -26,13 +26,6 @@
         font-weight: 600;
         font-style: italic;
         margin-bottom: 8px;
-    }
-
-    &_price {
-        font-size: 1.2em;
-        color: #000;
-        font-weight: bold;
-        margin-top: 12px;
     }
 
     &_image-container {

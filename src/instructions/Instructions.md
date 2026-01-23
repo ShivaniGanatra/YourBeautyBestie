@@ -84,6 +84,97 @@ Lots of foundations should appear
 
 
 
+import './MakeupCard.scss';
+
+type MakeupCardProps = {
+  makeupData?: object[];
+  name: string;
+  key: number;
+  description: string;
+  price: string;
+  image_link: string;
+  brand: string;
+};
+
+const MakeupCard = ({ name, description, price, image_link, brand }: MakeupCardProps) => {
+  return (
+    <div className="makeup-card">
+      <div className="makeup-card_brand">{brand}</div>
+      <div className="makeup-card_image-container">
+        <img className="makeup-card_image" src={image_link} alt="api featured image" />
+      </div>
+      <h1 className="makeup-card_title">{name}</h1>
+      <p className="makeup-card_price">£{price}</p>
+      <section className="makeup-card_colours">
+        Colours
+      </section>
+      <section className="makeup-card_description">{description}</section>
+    </div>
+  )
+}
+
+export default MakeupCard
+
+.makeup-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &_description {
+    font-size: 12px;
+    color: #666;
+    overflow-y: scroll;
+    height: 100px;
+    width: 260px;
+    }
+
+    &_brand {
+        font-size: 10px;
+        color: #b3b3b3;
+        font-weight: 600;
+        font-style: italic;
+        margin-bottom: 8px;
+    }
+
+    &_price {
+        font-size: 1.2em;
+        color: #000;
+        font-weight: bold;
+        margin-top: 12px;
+    }
+
+    &_image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 260px;
+        height: 200px;
+    }
+
+    &_image {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &_title {
+        font-size: 20px;
+        color: rgb(30, 128, 134);
+        background-color: aliceblue;
+        padding: 10px;
+    }
+}
+
+
 
 
 

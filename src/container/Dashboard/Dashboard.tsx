@@ -18,6 +18,7 @@ const Dashboard = ({ makeupData }: DashboardProps) => {
         price={makeupItem.price} 
         image_link={makeupItem.image_link}
         brand={makeupItem.brand}
+        product_colors={makeupItem.product_colors}
         />
       ))}
 
