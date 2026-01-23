@@ -1,37 +1,60 @@
 .makeup-card {
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 16px;
-    max-width: 300px;
+    padding: 20px;
+    width: 300px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: beige;
-    height: 400px;
+    background-color: rgb(255, 255, 255);
+    height: 500px;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    .makeup-card_description {
-    font-size: 1em;
+    &_description {
+    font-size: 12px;
     color: #666;
-}
+    overflow-y: scroll;
+    height: 100px;
+    width: 260px;
+    }
 
-    .makeup-card_price {
+    &_brand {
+        font-size: 10px;
+        color: #b3b3b3;
+        font-weight: 600;
+        font-style: italic;
+        margin-bottom: 8px;
+    }
+
+    &_price {
         font-size: 1.2em;
         color: #000;
         font-weight: bold;
         margin-top: 12px;
     }
 
-    .makeup-card_image {
-        max-width: 30px;
-        height: 30px;
-        border-radius: 4px;
-        margin-bottom: 12px;
-    }
-    .makeup-card_title {
-        font-size: 1.5em;
-        margin-bottom: 8px;
-        color: green;
+    &_image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 260px;
+        height: 200px;
     }
 
+    &_image {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &_title {
+        font-size: 20px;
+        color: rgb(30, 128, 134);
+        background-color: aliceblue;
+        padding: 10px;
+    }
 }
 
 

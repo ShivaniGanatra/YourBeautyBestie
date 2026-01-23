@@ -17,7 +17,7 @@ const Dashboard = ({ makeupData }: DashboardProps) => {
         description={makeupItem.description} 
         price={makeupItem.price} 
         image_link={makeupItem.image_link}
-        currency={makeupItem.price_sign}
+        brand={makeupItem.brand}
         />
       ))}
 
