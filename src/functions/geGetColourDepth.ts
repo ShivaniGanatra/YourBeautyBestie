@@ -16,7 +16,8 @@
         // 4. Apply the perceived brightness formula
         const brightness = (r * 0.299) + (g * 0.587) + (b * 0.114);
 
-        return brightness.toString().slice(0,3);
+        const brightnessAsAString = brightness.toString().slice(0,3);
+        return parseFloat(brightnessAsAString);
     }
 
     // Example Usage
@@ -25,5 +26,6 @@
 
     console.log(`Brightness: ${value}`); 
     // Output: Brightness: 184.96
+    console.log(typeof value);
 
  

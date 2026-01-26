@@ -7,7 +7,6 @@ import Navigation from './container/Navigation/Navigation'
 import { useEffect, useState } from 'react'
 
 const App = () => {
-  
   //fetch makeup data from makeup api
   const data = "http://makeup-api.herokuapp.com/api/v1/products.json?product_type=foundation"
 
@@ -28,13 +27,21 @@ const App = () => {
     getMakeup()
   }, [])
 
+  //Filtering
+  let min = 0
+  let max = 255
+
+  const [ minimumDepth, setMinimumDepth ] = useState<number>(min)
+  const [ maximumDepth, setMaximumDepth ] = useState<number>(max)
+
   return (
     <>
       <section> 
         <Navigation />
 
         <div className="main">
-          <Aside makeupData={makeupData}/>
+          {minimumDepth},{maximumDepth}
+          <Aside makeupData={makeupData} setMinimumDepth={setMinimumDepth} setMaximumDepth={setMaximumDepth}/>
           <Dashboard makeupData={makeupData} />
         </div>
 

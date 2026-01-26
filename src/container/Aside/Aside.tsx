@@ -4,9 +4,11 @@ import { getBrightness } from "../../functions/geGetColourDepth";
 
 type AsideProps = {
   makeupData?: any[];
+  setMinimumDepth?: (depth: number) => void;
+  setMaximumDepth?: (depth: number) => void;
 };  
 
-const Aside = ({ makeupData }: AsideProps) => {
+const Aside = ({ makeupData,setMinimumDepth,setMaximumDepth }: AsideProps) => {
   const haloLiquidFoundation = makeupData?.[19];
 
   // This funtion will use the Halo Liquid Foundation which will have 5 different shades
@@ -18,7 +20,7 @@ const Aside = ({ makeupData }: AsideProps) => {
   });
    
   // This function will add min and max brightness values for each shade based on the colour_name
-  
+
   const coloursWithMinMax = colorsWithBrightness?.map((color: any) => {
     let min = 0;
     let max = 0;
@@ -44,7 +46,7 @@ const Aside = ({ makeupData }: AsideProps) => {
   return (
     <section className="Aside">
      {coloursWithMinMax?.map((color: any) => 
-        <AsideShade key={color.colour_name} color={color}/>)}
+        <AsideShade setMinimumDepth={setMinimumDepth} setMaximumDepth={setMaximumDepth} key={color.colour_name} color={color}/>)}
     </section>
   )
 }
