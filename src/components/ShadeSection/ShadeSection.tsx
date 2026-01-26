@@ -1,3 +1,4 @@
+import { getBrightness } from "../../functions/geGetColourDepth";
 import Shade from "../Shade/Shade";
 import "./ShadeSection.scss"
 type ShadeSectionProps = {
@@ -12,7 +13,11 @@ const ShadeSection = ({ product_colors }: ShadeSectionProps) => {
             <p className="shade-section_title">Shade range - {product_colors.length} shades</p>
             <section className="shade-section_area"> 
                 {product_colors.map((color,index)=> (
-                <Shade key={color.colour_name + index} color={color.hex_value} colour_name={color.colour_name}/>))}
+                    // breakdown: pass brightness as prop to Shade component
+                    // calculate brightness using getBrightness function
+                    //and then convert to string and slice to 3 characters
+                    <Shade key={color.colour_name + index} color={color.hex_value} colour_name={color.colour_name} brightness={getBrightness(color.hex_value)}/>)
+                )}
             </section>
         </div>
     );

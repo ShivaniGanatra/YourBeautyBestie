@@ -16,7 +16,7 @@
         // 4. Apply the perceived brightness formula
         const brightness = (r * 0.299) + (g * 0.587) + (b * 0.114);
 
-        return brightness;
+        return brightness.toString().slice(0,3);
     }
 
     // Example Usage
@@ -26,8 +26,4 @@
     console.log(`Brightness: ${value}`); 
     // Output: Brightness: 184.96
 
-    if (value < 128) {
-        console.log("This is a dark color.");
-    } else {
-        console.log("This is a light color.");
-    }
+ 

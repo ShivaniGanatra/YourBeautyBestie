@@ -19,7 +19,7 @@ const App = () => {
     const response = await fetch(data)
     const makeupData = await response.json()
     const filteredMakeup = Object.values(makeupData).filter((makeupProduct: any) => makeupProduct.name.includes("Foundation")) as object[];
-    console.log(filteredMakeup)
+    //console.log(filteredMakeup)
     setMakeupData(filteredMakeup)
   }
 
