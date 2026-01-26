@@ -1,5 +1,5 @@
 
-  const getBrightness = (hex:string) => {
+  export const getBrightness = (hex:string) => {
     // 1. Remove the '#' if it's there
     hex = hex.replace('#', '');
 

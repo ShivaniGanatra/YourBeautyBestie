@@ -34,7 +34,7 @@ const App = () => {
         <Navigation />
 
         <div className="main">
-          <Aside />
+          <Aside makeupData={makeupData}/>
           <Dashboard makeupData={makeupData} />
         </div>
 

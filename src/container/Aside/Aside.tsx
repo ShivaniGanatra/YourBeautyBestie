@@ -1,9 +1,18 @@
+import AsideShade from "../../components/AsideShade/AsideShade"
 import "./Aside.scss"
 
-const Aside = () => {
+type AsideProps = {
+  makeupData?: any[];
+};  
+
+const Aside = ({ makeupData }: AsideProps) => {
+  const shadeCounts = makeupData?.[19];
+
   return (
     <section className="Aside">
-      Aside
+      <div>{shadeCounts?.product_colors?.map((color: any) => 
+        <AsideShade color={color}/>)}
+      </div>
     </section>
   )
 }

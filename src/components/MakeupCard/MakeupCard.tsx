@@ -23,7 +23,7 @@ const MakeupCard = ({ name, description, price, image_link, brand, product_color
       </div>
       <h1 className="makeup-card_title">{name}</h1>
       <section className="makeup-card_colours">
-        {product_colors.length > 1 ? (<ShadeSection product_colors={product_colors} />) : ("")}
+        {product_colors.length > 1 ? (<ShadeSection product_colors={product_colors} />) : ("No shade range information available")}
       </section>
       <section className="makeup-card_description">{description}</section>
     </div>
