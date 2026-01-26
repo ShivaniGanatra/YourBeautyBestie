@@ -42,7 +42,7 @@ const App = () => {
         <div className="main">
           {minimumDepth},{maximumDepth}
           <Aside makeupData={makeupData} setMinimumDepth={setMinimumDepth} setMaximumDepth={setMaximumDepth}/>
-          <Dashboard makeupData={makeupData} />
+          <Dashboard minimumDepth={minimumDepth} maximumDepth={maximumDepth} makeupData={makeupData} />
         </div>
 
       </section>

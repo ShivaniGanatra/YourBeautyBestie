@@ -18,7 +18,8 @@ const Aside = ({ makeupData,setMinimumDepth,setMaximumDepth }: AsideProps) => {
   const brightness = getBrightness(color.hex_value);
   return { ...color, brightness};
   });
-   
+  
+  console.log(colorsWithBrightness);
   // This function will add min and max brightness values for each shade based on the colour_name
 
   const coloursWithMinMax = colorsWithBrightness?.map((color: any) => {
@@ -27,25 +28,35 @@ const Aside = ({ makeupData,setMinimumDepth,setMaximumDepth }: AsideProps) => {
     if (color.colour_name === "1") {
       min = 225;
       max = 255;
+      color.colour_name = "Light";
+
     } else if (color.colour_name === "3") {
       min = 203;
       max = 224;
+      color.colour_name = "Light Medium";
+
     } else if (color.colour_name === "4") {
       min = 150;
       max = 202;
+      color.colour_name = "Medium";
     } else if (color.colour_name === "9") {
       min = 90;
       max = 149;
+      color.colour_name = "Medium Deep";
     } else if (color.colour_name === "10") {
       min = 0;
       max = 89;
+      color.colour_name = "Deep";
     }
     return { ...color, min, max };
     });
 
+    // Adding an extra button to revert back to original state
+  coloursWithMinMax?.unshift({hex_value: '#c2f0ff', colour_name: 'All shades', brightness: 228, min: 0, max: 255})
+
   return (
     <section className="Aside">
-     {coloursWithMinMax?.map((color: any) => 
+        {coloursWithMinMax?.map((color: any) => 
         <AsideShade setMinimumDepth={setMinimumDepth} setMaximumDepth={setMaximumDepth} key={color.colour_name} color={color}/>)}
     </section>
   )
