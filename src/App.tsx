@@ -37,10 +37,10 @@ const App = () => {
   return (
     <>
       <section> 
-        <Navigation />
+        <Navigation makeupData={makeupData}/>
 
         <div className="main">
-          {minimumDepth},{maximumDepth}
+          {/*{minimumDepth},{maximumDepth}*/}
           <Aside makeupData={makeupData} setMinimumDepth={setMinimumDepth} setMaximumDepth={setMaximumDepth}/>
           <Dashboard minimumDepth={minimumDepth} maximumDepth={maximumDepth} makeupData={makeupData} />
         </div>

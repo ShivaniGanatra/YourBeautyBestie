@@ -17,7 +17,7 @@ const AsideShade = ({ color, setMinimumDepth, setMaximumDepth }: AsideShadeProps
       setMinimumDepth?.(color.min);
       setMaximumDepth?.(color.max);
     }} style={{backgroundColor: color.hex_value}} className="AsideShade">
-      {` Color = ${color.colour_name} $ (Brightness: ${color.brightness}, Min: ${color.min}, Max: ${color.max})`}
+      {color.colour_name}
     </button>
   )
 }
