@@ -1,10 +1,11 @@
 import AsideShade from "../../components/AsideShade/AsideShade"
 import "./Aside.scss"
-import { getBrightness } from "../../functions/geGetColourDepth";
+import { getBrightness } from "../../functions";
 import "./../../_variables.scss"
+import type { Product } from "../../interfaces";
 
 type AsideProps = {
-  makeupData?: any[];
+  makeupData?: Product[];
   setMinimumDepth?: (depth: number) => void;
   setMaximumDepth?: (depth: number) => void;
   setDepth?: (depth: string) => void;
@@ -16,7 +17,7 @@ const Aside = ({ makeupData,setMinimumDepth,setMaximumDepth, setDepth }: AsidePr
   // This funtion will use the Halo Liquid Foundation which will have 5 different shades
   // It will map through the product colors and get the brightness for each color using getBrightness function
 
-  const colorsWithBrightness = haloLiquidFoundation?.product_colors?.map((color: any) => {
+  const colorsWithBrightness = haloLiquidFoundation?.product_colors?.map((color) => {
   const brightness = getBrightness(color.hex_value);
   return { ...color, brightness};
   });
@@ -24,7 +25,7 @@ const Aside = ({ makeupData,setMinimumDepth,setMaximumDepth, setDepth }: AsidePr
   console.log(colorsWithBrightness);
   // This function will add min and max brightness values for each shade based on the colour_name
 
-  const coloursWithMinMax = colorsWithBrightness?.map((color: any) => {
+  const coloursWithMinMax = colorsWithBrightness?.map((color) => {
     let min = 0;
     let max = 0;
     if (color.colour_name === "1") {
@@ -53,12 +54,11 @@ const Aside = ({ makeupData,setMinimumDepth,setMaximumDepth, setDepth }: AsidePr
     return { ...color, min, max };
     });
 
-    // Adding an extra button to revert back to original state
   coloursWithMinMax?.unshift({hex_value: 'rgb(221, 246, 255)', colour_name: 'All shades', brightness: 228, min: 0, max: 255})
 
   return (
     <section className="Aside">
-        {coloursWithMinMax?.map((color: any) => 
+        {coloursWithMinMax?.map((color) => 
         <AsideShade setDepth={setDepth} setMinimumDepth={setMinimumDepth} setMaximumDepth={setMaximumDepth} key={color.colour_name} color={color}/>)}
     </section>
   )

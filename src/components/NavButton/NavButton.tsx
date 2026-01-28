@@ -2,8 +2,8 @@ import "./NavButton.scss"
 
 type NavButtonProps = {
     brand: string;
-    value?: string;
-    key?: string;
+    value: string;
+    key: string;
     setBrand?: (brand: string) => void;
 }
 

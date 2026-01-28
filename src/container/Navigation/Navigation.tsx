@@ -1,15 +1,16 @@
 import NavButton from "../../components/NavButton/NavButton";
+import type { Product } from "../../interfaces";
 import "./Navigation.scss"
 
 type NavigationProps = {
-  makeupData?: object[];
+  makeupData?: Product[];
   setBrand?: (brand: string) => void;
   brand?: string;
   depth?: string
 };
 
 const Navigation = ({ makeupData, setBrand, brand, depth }: NavigationProps) => {
-  const makeuppBrands = makeupData?.map((product: any) => product.brand);
+  const makeuppBrands = makeupData?.map((product: Product) => product.brand) ?? [];
   const noRepeatedBrands = [...new Set(makeuppBrands)];
   const noNullandNoRepeatedBrands = noRepeatedBrands.filter((brand) => brand !== null);
   const brandsToAnArray = [...noNullandNoRepeatedBrands];

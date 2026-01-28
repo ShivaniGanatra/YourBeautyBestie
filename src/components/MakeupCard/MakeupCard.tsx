@@ -1,3 +1,4 @@
+import type { ShadeInterface } from '../../interfaces';
 import ShadeSection from '../ShadeSection/ShadeSection';
 import './MakeupCard.scss';
 
@@ -8,9 +9,7 @@ type MakeupCardProps = {
   price: string;
   image_link: string;
   brand: string;
-  product_colors: { 
-    hex_value: string;
-     colour_name: string }[];
+  product_colors: ShadeInterface[]
 };
 
 const MakeupCard = ({ name, description, price, image_link, brand, product_colors }: MakeupCardProps) => {
