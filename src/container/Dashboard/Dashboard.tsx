@@ -6,10 +6,11 @@ type DashboardProps = {
  makeupData: any[];
  minimumDepth: number;
  maximumDepth: number;
+ brand?: string;
 };
 
 
-const Dashboard = ({ makeupData, minimumDepth, maximumDepth }: DashboardProps) => {
+const Dashboard = ({ makeupData, minimumDepth, maximumDepth, brand }: DashboardProps) => {
 
   const makeupDataWithBrightnessValues = makeupData.map((makeupItem: any) => {
     const productColorsWithBrightness = makeupItem.product_colors.map((color: any) => {
@@ -26,6 +27,11 @@ const Dashboard = ({ makeupData, minimumDepth, maximumDepth }: DashboardProps) =
       return color.brightness >= minimumDepth && color.brightness <= maximumDepth;
     });
     return makeupItem.product_colors.length > 0;
+  }).filter((makeupItem: any) => {
+    if (!brand || brand === "") {
+      return true; // No brand filter applied
+    }
+    return makeupItem.brand === brand;
   });
 
   return (

@@ -30,19 +30,21 @@ const App = () => {
   //Filtering
   let min = 0
   let max = 255
+  let selectedBrand = ""
 
   const [ minimumDepth, setMinimumDepth ] = useState<number>(min)
   const [ maximumDepth, setMaximumDepth ] = useState<number>(max)
+  const [ brand, setBrand ] = useState<string>(selectedBrand)
 
   return (
     <>
       <section> 
-        <Navigation makeupData={makeupData}/>
+        <Navigation setBrand={setBrand} makeupData={makeupData}/>
 
         <div className="main">
           {/*{minimumDepth},{maximumDepth}*/}
           <Aside makeupData={makeupData} setMinimumDepth={setMinimumDepth} setMaximumDepth={setMaximumDepth}/>
-          <Dashboard minimumDepth={minimumDepth} maximumDepth={maximumDepth} makeupData={makeupData} />
+          <Dashboard brand={brand} minimumDepth={minimumDepth} maximumDepth={maximumDepth} makeupData={makeupData} />
         </div>
 
       </section>

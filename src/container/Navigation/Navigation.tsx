@@ -3,23 +3,22 @@ import "./Navigation.scss"
 
 type NavigationProps = {
   makeupData?: object[];
+  setBrand?: (brand: string) => void;
 };
 
-const Navigation = ({ makeupData }: NavigationProps) => {
-  console.log(makeupData);
-
+const Navigation = ({ makeupData, setBrand }: NavigationProps) => {
   const makeuppBrands = makeupData?.map((product: any) => product.brand);
-  console.log(makeuppBrands);
-
   const noRepeatedBrands = [...new Set(makeuppBrands)];
   const noNullandNoRepeatedBrands = noRepeatedBrands.filter((brand) => brand !== null);
-  console.log(noNullandNoRepeatedBrands);
+  const brandsToAnArray = [...noNullandNoRepeatedBrands];
 
   return (
     <nav className="Navigation">
-      {noNullandNoRepeatedBrands?.map((brand, index) => (
-        <NavButton key={index} brand={brand} />
-      ))}
+      <section className="Navigation_buttons">
+        <NavButton setBrand={setBrand} key="All Brands" brand="All Brands" value=""/>
+        {brandsToAnArray?.map((brand:string) => (
+        <NavButton setBrand={setBrand} key={brand} brand={brand} value={brand}/>))}
+      </section>
     </nav>
   )
 }

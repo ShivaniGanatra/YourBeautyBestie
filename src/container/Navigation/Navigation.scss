@@ -1,4 +1,14 @@
 .Navigation {
     background-color: rgb(161, 189, 189);
-    height: 50px;
+    min-height: 125px;
+    display: flex;
+    justify-content: flex-end;
+
+    &_buttons {
+        width: 75vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
 }
