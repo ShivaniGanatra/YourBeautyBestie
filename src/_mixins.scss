@@ -1,0 +1,16 @@
+@mixin flex-center ($flex-direction){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $flex-direction;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin font ($font-size, $font-color, $font-style) {
+    font-size: $font-size;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: $font-color;
+    font-style: $font-style;
+}

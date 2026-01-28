@@ -1,5 +1,9 @@
+@import "./../../variables";
+
+
 .Aside {
-    background-color: lightgray;
+    background-color: $teriary-color;
     width: 25vw;
     height: 100%;
+
 }

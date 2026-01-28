@@ -1,6 +1,7 @@
 import AsideShade from "../../components/AsideShade/AsideShade"
 import "./Aside.scss"
 import { getBrightness } from "../../functions/geGetColourDepth";
+import "./../../_variables.scss"
 
 type AsideProps = {
   makeupData?: any[];
@@ -53,7 +54,7 @@ const Aside = ({ makeupData,setMinimumDepth,setMaximumDepth, setDepth }: AsidePr
     });
 
     // Adding an extra button to revert back to original state
-  coloursWithMinMax?.unshift({hex_value: '#c2f0ff', colour_name: 'All shades', brightness: 228, min: 0, max: 255})
+  coloursWithMinMax?.unshift({hex_value: 'rgb(221, 246, 255)', colour_name: 'All shades', brightness: 228, min: 0, max: 255})
 
   return (
     <section className="Aside">

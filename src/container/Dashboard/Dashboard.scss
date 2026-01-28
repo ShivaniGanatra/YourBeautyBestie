@@ -1,6 +1,9 @@
+@import "./../../variables";
+@import "./../../mixins";
+
 .Dashboard {
     margin: 0;
-    background-color: white;
+    background-color: $primary-color;
     display: flex;
     width: 75vw;
     height: auto;
