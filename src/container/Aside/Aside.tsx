@@ -6,9 +6,10 @@ type AsideProps = {
   makeupData?: any[];
   setMinimumDepth?: (depth: number) => void;
   setMaximumDepth?: (depth: number) => void;
+  setDepth?: (depth: string) => void;
 };  
 
-const Aside = ({ makeupData,setMinimumDepth,setMaximumDepth }: AsideProps) => {
+const Aside = ({ makeupData,setMinimumDepth,setMaximumDepth, setDepth }: AsideProps) => {
   const haloLiquidFoundation = makeupData?.[19];
 
   // This funtion will use the Halo Liquid Foundation which will have 5 different shades
@@ -28,25 +29,25 @@ const Aside = ({ makeupData,setMinimumDepth,setMaximumDepth }: AsideProps) => {
     if (color.colour_name === "1") {
       min = 225;
       max = 255;
-      color.colour_name = "Light";
+      color.colour_name = "Light shades";
 
     } else if (color.colour_name === "3") {
       min = 203;
       max = 224;
-      color.colour_name = "Light Medium";
+      color.colour_name = "Light Medium shades";
 
     } else if (color.colour_name === "4") {
       min = 150;
       max = 202;
-      color.colour_name = "Medium";
+      color.colour_name = "Medium shades";
     } else if (color.colour_name === "9") {
       min = 90;
       max = 149;
-      color.colour_name = "Medium Deep";
+      color.colour_name = "Medium Deep shades";
     } else if (color.colour_name === "10") {
       min = 0;
       max = 89;
-      color.colour_name = "Deep";
+      color.colour_name = "Deep shades";
     }
     return { ...color, min, max };
     });
@@ -57,7 +58,7 @@ const Aside = ({ makeupData,setMinimumDepth,setMaximumDepth }: AsideProps) => {
   return (
     <section className="Aside">
         {coloursWithMinMax?.map((color: any) => 
-        <AsideShade setMinimumDepth={setMinimumDepth} setMaximumDepth={setMaximumDepth} key={color.colour_name} color={color}/>)}
+        <AsideShade setDepth={setDepth} setMinimumDepth={setMinimumDepth} setMaximumDepth={setMaximumDepth} key={color.colour_name} color={color}/>)}
     </section>
   )
 }

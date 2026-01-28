@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 
 import Aside from './container/Aside/Aside'
 import Dashboard from './container/Dashboard/Dashboard'
@@ -31,19 +31,22 @@ const App = () => {
   let min = 0
   let max = 255
   let selectedBrand = ""
+  let depthOfColour = "All shades"
+
 
   const [ minimumDepth, setMinimumDepth ] = useState<number>(min)
   const [ maximumDepth, setMaximumDepth ] = useState<number>(max)
   const [ brand, setBrand ] = useState<string>(selectedBrand)
+  const [depth, setDepth] =useState<string>(depthOfColour)
 
   return (
     <>
       <section> 
-        <Navigation setBrand={setBrand} makeupData={makeupData}/>
+        <Navigation depth={depth} brand={brand} setBrand={setBrand} makeupData={makeupData}/>
 
         <div className="main">
           {/*{minimumDepth},{maximumDepth}*/}
-          <Aside makeupData={makeupData} setMinimumDepth={setMinimumDepth} setMaximumDepth={setMaximumDepth}/>
+          <Aside setDepth={setDepth} makeupData={makeupData} setMinimumDepth={setMinimumDepth} setMaximumDepth={setMaximumDepth}/>
           <Dashboard brand={brand} minimumDepth={minimumDepth} maximumDepth={maximumDepth} makeupData={makeupData} />
         </div>
 

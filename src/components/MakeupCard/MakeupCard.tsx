@@ -2,7 +2,6 @@ import ShadeSection from '../ShadeSection/ShadeSection';
 import './MakeupCard.scss';
 
 type MakeupCardProps = {
-  makeupData?: object[];
   name: string;
   key: number;
   description: string;

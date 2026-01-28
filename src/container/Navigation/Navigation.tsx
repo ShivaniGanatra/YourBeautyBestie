@@ -4,9 +4,11 @@ import "./Navigation.scss"
 type NavigationProps = {
   makeupData?: object[];
   setBrand?: (brand: string) => void;
+  brand?: string;
+  depth?: string
 };
 
-const Navigation = ({ makeupData, setBrand }: NavigationProps) => {
+const Navigation = ({ makeupData, setBrand, brand, depth }: NavigationProps) => {
   const makeuppBrands = makeupData?.map((product: any) => product.brand);
   const noRepeatedBrands = [...new Set(makeuppBrands)];
   const noNullandNoRepeatedBrands = noRepeatedBrands.filter((brand) => brand !== null);
@@ -19,6 +21,7 @@ const Navigation = ({ makeupData, setBrand }: NavigationProps) => {
         {brandsToAnArray?.map((brand:string) => (
         <NavButton setBrand={setBrand} key={brand} brand={brand} value={brand}/>))}
       </section>
+      <section className="Navigation_descriptor">{depth} {brand? " in " + brand : " in all brands"}</section>
     </nav>
   )
 }

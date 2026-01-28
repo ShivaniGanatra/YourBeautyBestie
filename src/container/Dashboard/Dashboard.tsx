@@ -20,8 +20,6 @@ const Dashboard = ({ makeupData, minimumDepth, maximumDepth, brand }: DashboardP
     return { ...makeupItem, product_colors: productColorsWithBrightness };
   });
 
-  console.log(makeupDataWithBrightnessValues);
-
   const filteredMakeupData = makeupDataWithBrightnessValues.filter((makeupItem: any) => {
     makeupItem.product_colors = makeupItem.product_colors.filter((color: any) => {
       return color.brightness >= minimumDepth && color.brightness <= maximumDepth;
@@ -36,7 +34,8 @@ const Dashboard = ({ makeupData, minimumDepth, maximumDepth, brand }: DashboardP
 
   return (
     <section className="Dashboard">
-      {filteredMakeupData.map((makeupItem) => (
+      {filteredMakeupData.length
+        ? filteredMakeupData.map((makeupItem) => (
         <MakeupCard 
         key={makeupItem.id} 
         name={makeupItem.name} 
@@ -46,7 +45,8 @@ const Dashboard = ({ makeupData, minimumDepth, maximumDepth, brand }: DashboardP
         brand={makeupItem.brand}
         product_colors={makeupItem.product_colors}
         />
-      ))}
+      ))
+      : "No products match your criteria."}
     </section>
 
   )
