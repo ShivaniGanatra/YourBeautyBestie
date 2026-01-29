@@ -10,7 +10,7 @@ import type { Product } from './interfaces';
 
 const App = () => {
   //fetch makeup data from makeup api
-  const data = "http://makeup-api.herokuapp.com/api/v1/products.json?product_type=foundation"
+  const data = "https://makeup-api.herokuapp.com/api/v1/products.json?product_type=foundation"
 
   //useState to store makeup data
   const [makeupData, setMakeupData] = useState<Product[]>([]);
