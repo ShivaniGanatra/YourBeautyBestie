@@ -26,5 +26,5 @@ export const cleanedProductsData = (anyData: any[]): Product[] => {
         }));
     };
 
-
+ console.log(getBrightness("#f2d7c2"))
  

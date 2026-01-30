@@ -19,9 +19,9 @@ const App = () => {
   const getMakeup = async () => {
     const response = await fetch(data)
     const makeupData = await response.json()
-    const filteredMakeup = Object.values(makeupData).filter((makeupProduct: any) => makeupProduct.name.includes("Foundation")) as object[];
+    const filteredMakeup = Object.values(makeupData).filter((makeupProduct: any) => makeupProduct.name.includes("Foundation") && makeupProduct.product_colors.length > 0) as object[];
     const cleanedAndFilteredMakeup = cleanedProductsData(filteredMakeup)
-    //console.log(filteredMakeup)
+    console.log(filteredMakeup)
     setMakeupData(cleanedAndFilteredMakeup)
   }
 

@@ -1,7 +1,7 @@
 import MakeupCard from "../../components/MakeupCard/MakeupCard"
 import "./Dashboard.scss"
 import { getBrightness } from "../../functions";
-import type { Product } from "../../interfaces";
+import type { Product, ShadeInterface } from "../../interfaces";
 
 type DashboardProps = {
  makeupData: Product[];
@@ -14,7 +14,7 @@ type DashboardProps = {
 const Dashboard = ({ makeupData, minimumDepth, maximumDepth, brand }: DashboardProps) => {
 
   const makeupDataWithBrightnessValues = makeupData.map((makeupItem: Product) => {
-    const productColorsWithBrightness = makeupItem.product_colors.map((color: any) => {
+    const productColorsWithBrightness = makeupItem.product_colors.map((color: ShadeInterface) => {
       const brightness = getBrightness(color.hex_value);
       return { ...color, brightness };
     });
@@ -26,7 +26,7 @@ const Dashboard = ({ makeupData, minimumDepth, maximumDepth, brand }: DashboardP
       return color.brightness >= minimumDepth && color.brightness <= maximumDepth;
     });
     return [];
-  }).filter((makeupItem: any) => {
+  }).filter((makeupItem => makeupItem.product_colors.length > 0)).filter((makeupItem: Product) => {
     if (!brand || brand === "") {
       return []; 
     }
